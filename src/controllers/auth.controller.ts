@@ -79,14 +79,14 @@ export const login = async (req: Request, res: Response): Promise<void> => {
   );
 
     res.json({
-  message: "Login successful",
-  token,
-  user: {
-    id: user.id,
-    email: user.email,
-    organizationName: user.organization?.name || "",
-  },
-});
+    message: "Login successful",
+    token,
+    user: {
+      id: user.id,
+      email: user.email,
+      organizationName: user.organization?.name || "",
+    },
+  });
   } catch (error) {
       console.error("LOGIN ERROR:", error);
       res.status(500).json({ message: "Something went wrong" });
